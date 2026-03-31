@@ -12,14 +12,38 @@ namespace listaenlazada
 
         public void AgregaIni(int valor)
         {
-            Vagon nuevo=new Vagon(valor);
-            if (this.Primero == null) {
+            Vagon nuevo = new Vagon(valor);
+            if (this.Primero == null)
+            {
                 this.Primero = nuevo;
             }
             else
             {
-                Vagon prim=this.Primero;
-                nuevo.Sig=this.Primero;
+                Vagon prim = this.Primero;
+                nuevo.Sig = prim;
+                nuevo.Sig = this.Primero;
+            }
+        }
+        public void AgregaFin(int valor)
+        {
+            Vagon nuevo = new Vagon(valor);
+            if (this.Primero == null)
+            {
+                this.Primero = nuevo;
+            }
+            else if (this.Primero.Sig == null)
+            {
+                this.Primero.Sig = nuevo;
+            }
+            else
+            {
+                Vagon ultimo = Primero;
+                while (ultimo != null)
+                {
+                    ultimo=ultimo.Sig;
+
+                }
+                ultimo.Sig = nuevo;
             }
         }
 

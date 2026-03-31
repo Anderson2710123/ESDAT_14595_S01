@@ -10,6 +10,7 @@ namespace listaenlazada
     {
         public Vagon Sig { get; set; }
         
+
         public int Dato { get; set; }
 
         public Vagon(int dato)
