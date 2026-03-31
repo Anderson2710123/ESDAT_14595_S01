@@ -10,6 +10,19 @@ namespace listaenlazada
     {
         public Vagon Primero {  get; set; }
 
+        public void AgregaIni(int valor)
+        {
+            Vagon nuevo=new Vagon(valor);
+            if (this.Primero == null) {
+                this.Primero = nuevo;
+            }
+            else
+            {
+                Vagon prim=this.Primero;
+                nuevo.Sig=this.Primero;
+            }
+        }
+
         public void Imprime()
         {
             Vagon tmp = Primero;
