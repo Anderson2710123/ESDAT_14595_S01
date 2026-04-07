@@ -16,14 +16,24 @@ a.Primero = v3;
 a.Imprime();
 */
 Console.WriteLine();
-Locomotora b = new Locomotora();
-b.AgregaIni(5);
-b.AgregaIni(3);
-b.AgregaIni(1);
-b.AgregaFin(7);
-b.EliminaSegundo();
-b.Imprime();
+/*Locomotora z = new Locomotora();
+z.AgregaIni(5);
+z.AgregaIni(3);
+z.AgregaIni(1);
+z.AgregaFin(7);
+z.EliminaSegundo();
+z.Imprime();
 Console.WriteLine("Ingrese valor a buscar");
 int vbus = Convert.ToInt32(Console.ReadLine());
-Console.WriteLine(b.BuscaValor(vbus) ? "Encontrado" : "no esta");
-
+Console.WriteLine(z.BuscaValor(vbus) ? "Encontrado" : "no esta");*/
+Locomotora a=new Locomotora();
+a.AgregaFin(1);
+a.AgregaFin(3);
+a.AgregaFin(5);
+Locomotora b=new Locomotora();
+b.AgregaFin(2);
+b.AgregaFin(4);
+b.AgregaFin(6);
+a.Imprime();
+a.MerclaAlFinal(b);
+a.Imprime();
