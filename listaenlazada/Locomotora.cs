@@ -37,8 +37,30 @@ namespace listaenlazada{
         }
 
         public void EliminaSegundo() {
-
+            //1)sin vagones o 1 vagon no hacer nada
+            if (this.Primero != null) {
+                if (this.Primero.Sig != null) {
+                    //2)el sig del 2do lo conecto al primero
+                    Vagon segundo = this.Primero.Sig;
+                    Vagon tercero = segundo.Sig;
+                    this.Primero.Sig = tercero;
+                    //3) sig del 2do = null
+                    segundo.Sig = null;
+                }
+            }
         }
+
+        public bool BuscaValor(int valorBuscar) {
+            Vagon tmp = Primero;
+            while (tmp != null) {
+                if (tmp.Dato == valorBuscar) {
+                    return true;
+                }
+                tmp = tmp.Sig;
+            }
+            return false;
+        }
+
         public void Imprime(){
             Vagon tmp = Primero;
             while (tmp != null){
