@@ -84,6 +84,28 @@ namespace listaenlazada{
             return contar;
         }
 
+        public void MerclaAlFinal(Locomotora listFin) {
+            //los elementos de listFin los agregaran al final de la lista actual
+            int cant = listFin.Length();
+            for (int i = 0; i <= cant; i++) {
+                this.AgregaFin(listFin.Get(i));
+            }
+        }
+        public void MerclaAlFinal2(Locomotora listFin) {
+            //los elementos de listFin los agregaran al final de la lista actual
+            Vagon PriVagB = listFin.Primero;
+            //llegas al ultimo
+            if (this.Primero == null) {
+                this.Primero = PriVagB;
+            } else {
+                Vagon tmp = Primero;
+                while (tmp.Sig != null) {
+                    tmp = tmp.Sig;
+                }
+                tmp.Sig = PriVagB;
+            }
+        }
+
         public void Imprime(){
             Vagon tmp = Primero;
             while (tmp != null){
